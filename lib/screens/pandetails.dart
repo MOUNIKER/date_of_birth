@@ -123,6 +123,22 @@ class _PanDetailScreenState extends State<PanDetailScreen> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ValueListenableBuilder<Color>(
+                  valueListenable: colorNotifier,
+                  builder: (context, color, child) {
+                    if (color == Colors.red) {
+                      return const Text(
+                        "Enter correct DOB",
+                        style: TextStyle(color: Colors.red, fontSize: 18),
+                      );
+                    } else {
+                      return const SizedBox();
+                    }
+                  },
                 )
               ],
             ),
